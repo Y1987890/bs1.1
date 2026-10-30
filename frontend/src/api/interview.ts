@@ -51,7 +51,7 @@ export const interviewApi = {
    */
   async createSession(req: CreateInterviewRequest): Promise<InterviewSession> {
     return request.post<InterviewSession>('/api/interview/sessions', req, {
-      timeout: 180000, // 3分钟超时，AI生成问题需要时间
+      timeout: 180000, // 3分钟超时，模型生成问题需要时间
     });
   },
 
@@ -87,7 +87,7 @@ export const interviewApi = {
    */
   async getReport(sessionId: string): Promise<InterviewReport> {
     return request.get<InterviewReport>(`/api/interview/sessions/${sessionId}/report`, {
-      timeout: 180000, // 3分钟超时，AI评估需要时间
+      timeout: 180000, // 3分钟超时，模型评估需要时间
     });
   },
 

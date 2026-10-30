@@ -138,7 +138,7 @@ export default function VoiceInterviewEvaluationPage() {
         <div className="text-center">
           <div className="w-10 h-10 border-3 border-slate-200 dark:border-slate-700 border-t-primary-500 rounded-full animate-spin mx-auto mb-4" />
           <p className="text-slate-600 dark:text-slate-300">
-            {evaluateStatus === 'PROCESSING' ? 'AI 正在分析面试表现...' : '正在生成评估报告...'}
+            {evaluateStatus === 'PROCESSING' ? '智能分析面试表现中...' : '正在生成评估报告...'}
           </p>
           <p className="text-slate-400 text-sm mt-2">预计需要 10-30 秒</p>
         </div>

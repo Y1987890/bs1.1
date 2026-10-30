@@ -111,12 +111,12 @@ public class InterviewParseService {
             return new ParseResponse(true, result, 0.95, "rule", "规则解析成功");
         }
 
-        // Step 2: Rule parsing failed, try AI parsing
-        log.info("规则解析失败，尝试 AI 解析");
+        // Step 2: Rule parsing failed, try model parsing
+        log.info("规则解析失败，尝试模型解析");
         result = parseWithAI(rawText, source); // 使用source作为provider参数
         if (isValidResult(result)) {
-            log.info("AI 解析成功");
-            return new ParseResponse(true, result, 0.8, "ai", "AI 解析成功");
+            log.info("模型解析成功");
+            return new ParseResponse(true, result, 0.8, "llm", "智能解析成功");
         }
 
         // Step 3: Both failed
@@ -311,7 +311,7 @@ public class InterviewParseService {
                     .content();
 
             if (content == null || content.trim().isEmpty()) {
-                log.error("AI 解析返回内容为空");
+                log.error("模型解析返回内容为空");
                 return null;
             }
 
@@ -353,7 +353,7 @@ public class InterviewParseService {
                         request.setInterviewTime(LocalDateTime.parse(timeStr));
                     }
                 } catch (Exception e) {
-                    log.error("AI 返回的时间格式不正确: {}", result.get("interviewTime"));
+                    log.error("模型返回的时间格式不正确: {}", result.get("interviewTime"));
                 }
             }
 
@@ -382,11 +382,11 @@ public class InterviewParseService {
                 request.setNotes(result.get("notes").toString().trim());
             }
 
-            log.info("AI 解析成功: {}", request.getCompanyName());
+            log.info("模型解析成功: {}", request.getCompanyName());
             return request;
 
         } catch (Exception e) {
-            log.error("AI 解析异常: {}", e.getMessage(), e);
+            log.error("模型解析异常: {}", e.getMessage(), e);
             return null;
         }
     }

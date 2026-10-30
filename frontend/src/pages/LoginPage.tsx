@@ -36,7 +36,7 @@ const ENTRANCES: Entrance[] = [
   {
     role: '管理员',
     title: '我是平台管理员',
-    description: '用户与角色 · 岗位审核 · AI 服务配置 · 审计',
+    description: '用户与角色 · 岗位审核 · 模型服务配置 · 审计',
     icon: ShieldCheck,
     iconBg: 'from-amber-500 to-amber-600',
     ring: 'hover:border-amber-300 dark:hover:border-amber-700 hover:shadow-amber-500/10',

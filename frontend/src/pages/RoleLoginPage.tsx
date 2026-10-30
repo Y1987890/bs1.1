@@ -45,7 +45,7 @@ const ROLE_CONFIGS: Record<Role, RoleConfig> = {
     role: 'ADMIN',
     title: '管理员登录',
     subtitle: '平台运营与治理',
-    description: '管理用户与角色、审核岗位、维护知识库与 AI 服务配置、查看审计日志。',
+    description: '管理用户与角色、审核岗位、维护知识库与模型服务配置、查看审计日志。',
     icon: ShieldCheck,
     accentBadge: 'bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400',
     iconBg: 'from-amber-500 to-amber-600',

@@ -82,49 +82,49 @@ public class GlobalExceptionHandler {
     }
     
     /**
-     * 处理 AI 服务网络异常（SSL握手失败、连接超时等）
+     * 处理模型服务网络异常（SSL握手失败、连接超时等）
      * 统一返回 HTTP 200，通过业务错误码区分异常类型
      */
     @ExceptionHandler(ResourceAccessException.class)
     @ResponseStatus(HttpStatus.OK)
     public Result<Void> handleResourceAccessException(ResourceAccessException e) {
-        log.error("AI服务连接失败: {}", e.getMessage(), e);
-        
+        log.error("模型服务连接失败: {}", e.getMessage(), e);
+
         // 判断具体异常类型
         Throwable cause = e.getCause();
         if (cause instanceof SocketTimeoutException) {
-            return Result.error(ErrorCode.AI_SERVICE_TIMEOUT, "AI服务响应超时，请稍后重试");
+            return Result.error(ErrorCode.AI_SERVICE_TIMEOUT, "模型服务响应超时，请稍后重试");
         }
-        
+
         // SSL握手失败或其他网络问题
         String message = e.getMessage();
         if (message != null && message.contains("handshake")) {
-            return Result.error(ErrorCode.AI_SERVICE_UNAVAILABLE, "AI服务连接失败（网络不稳定），请检查网络或稍后重试");
+            return Result.error(ErrorCode.AI_SERVICE_UNAVAILABLE, "模型服务连接失败（网络不稳定），请检查网络或稍后重试");
         }
-        
-        return Result.error(ErrorCode.AI_SERVICE_UNAVAILABLE, "AI服务暂时不可用，请稍后重试");
+
+        return Result.error(ErrorCode.AI_SERVICE_UNAVAILABLE, "模型服务暂时不可用，请稍后重试");
     }
-    
+
     /**
-     * 处理 AI 服务调用异常
+     * 处理模型服务调用异常
      * 统一返回 HTTP 200，通过业务错误码区分异常类型
      */
     @ExceptionHandler(RestClientException.class)
     @ResponseStatus(HttpStatus.OK)
     public Result<Void> handleRestClientException(RestClientException e) {
-        log.error("AI服务调用失败: {}", e.getMessage(), e);
-        
+        log.error("模型服务调用失败: {}", e.getMessage(), e);
+
         String message = e.getMessage();
         if (message != null) {
             if (message.contains("401") || message.contains("Unauthorized")) {
-                return Result.error(ErrorCode.AI_API_KEY_INVALID, "AI服务密钥无效，请联系管理员");
+                return Result.error(ErrorCode.AI_API_KEY_INVALID, "模型服务密钥无效，请联系管理员");
             }
             if (message.contains("429") || message.contains("Too Many Requests")) {
-                return Result.error(ErrorCode.AI_RATE_LIMIT_EXCEEDED, "AI服务调用过于频繁，请稍后重试");
+                return Result.error(ErrorCode.AI_RATE_LIMIT_EXCEEDED, "模型服务调用过于频繁，请稍后重试");
             }
         }
-        
-        return Result.error(ErrorCode.AI_SERVICE_ERROR, "AI服务调用失败，请稍后重试");
+
+        return Result.error(ErrorCode.AI_SERVICE_ERROR, "模型服务调用失败，请稍后重试");
     }
     
     /**

@@ -126,9 +126,9 @@ public class ResumeGradingService {
                     "简历分析",
                     log
                 );
-                log.debug("AI响应解析成功: overallScore={}", dto.overallScore());
+                log.debug("模型响应解析成功: overallScore={}", dto.overallScore());
             } catch (Exception e) {
-                log.error("简历分析AI调用失败: {}", e.getMessage(), e);
+                log.error("简历分析模型调用失败: {}", e.getMessage(), e);
                 throw new BusinessException(ErrorCode.RESUME_ANALYSIS_FAILED, "简历分析失败：" + e.getMessage());
             }
             
@@ -182,8 +182,8 @@ public class ResumeGradingService {
             List.of(new Suggestion(
                 "系统",
                 "高",
-                "AI分析服务暂时不可用",
-                "请稍后重试，或检查AI服务是否正常运行"
+                "模型分析服务暂时不可用",
+                "请稍后重试，或检查模型服务是否正常运行"
             )),
             originalText
         );

@@ -45,7 +45,7 @@ export default function RealtimeSubtitle({
           {isAiSpeaking && (
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-primary-500 rounded-full animate-pulse" />
-              <span className="text-[10px] uppercase tracking-wider text-primary-400 font-semibold">AI 说</span>
+              <span className="text-[10px] uppercase tracking-wider text-primary-400 font-semibold">智能回答</span>
             </div>
           )}
           {userText && (
@@ -73,7 +73,7 @@ export default function RealtimeSubtitle({
             </div>
           ))}
 
-          {/* Current AI Response (Active) */}
+          {/* Current Model Response (Active) */}
           {shouldShowActiveAi && (
             <motion.div
               key="active-ai"

@@ -315,7 +315,7 @@ function QuestionCard({
                 </p>
               </div>
 
-              {/* AI 深度评价 */}
+              {/* 深度评价 */}
               {answer.feedback && (
                 <div>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mb-2 flex items-center gap-2 font-medium">
@@ -323,7 +323,7 @@ function QuestionCard({
                       <path d="M3 3V21H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       <path d="M18 9L12 15L9 12L3 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                    AI 深度评价
+                    深度评价
                   </p>
                   <p className="text-slate-700 dark:text-slate-300 leading-relaxed pl-6">{answer.feedback}</p>
                 </div>

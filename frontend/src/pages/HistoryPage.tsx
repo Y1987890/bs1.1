@@ -115,7 +115,7 @@ export default function HistoryList({onSelectResume}: HistoryListProps) {
             <FileStack className="w-7 h-7 text-primary-500" />
             简历管理
           </h1>
-          <p className="text-slate-500 dark:text-slate-400 mt-1">管理您的简历，AI 智能分析与评分</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-1">管理您的简历，智能分析与评分</p>
         </div>
         <div className="flex gap-3">
           <button
@@ -173,7 +173,7 @@ export default function HistoryList({onSelectResume}: HistoryListProps) {
         >
           <div className="text-6xl mb-6">📄</div>
           <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-300 mb-2">暂无简历记录</h3>
-          <p className="text-slate-500 dark:text-slate-400">上传简历开始您的第一次 AI 面试分析</p>
+          <p className="text-slate-500 dark:text-slate-400">上传简历开始您的第一次智能面试分析</p>
         </motion.div>
       )}
 
@@ -191,7 +191,7 @@ export default function HistoryList({onSelectResume}: HistoryListProps) {
               <th className="text-left px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">简历名称</th>
               <th className="text-left px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">上传日期</th>
               <th className="text-left px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">分析状态</th>
-              <th className="text-left px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">AI 评分</th>
+              <th className="text-left px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">智能评分</th>
               <th className="text-left px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">面试状态</th>
               <th className="w-20"></th>
             </tr>

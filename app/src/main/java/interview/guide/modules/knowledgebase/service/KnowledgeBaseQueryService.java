@@ -247,7 +247,7 @@ public class KnowledgeBaseQueryService {
                 .doOnComplete(() -> log.info("流式输出完成: kbIds={}", knowledgeBaseIds))
                 .onErrorResume(e -> {
                     log.error("流式输出失败: kbIds={}, error={}", knowledgeBaseIds, e.getMessage(), e);
-                    return Flux.just("【错误】知识库查询失败：AI服务暂时不可用，请稍后重试。");
+                    return Flux.just("【错误】知识库查询失败：模型服务暂时不可用，请稍后重试。");
                 });
 
         } catch (Exception e) {

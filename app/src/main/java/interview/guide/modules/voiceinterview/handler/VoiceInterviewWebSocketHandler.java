@@ -832,7 +832,7 @@ public class VoiceInterviewWebSocketHandler extends TextWebSocketHandler impleme
             incrementCounter("app.voice.interview.turn.completed", "status", "failure");
             incrementCounter("app.voice.interview.errors", "stage", "turn");
             if (session.isOpen()) {
-                sendError(session, "AI响应失败: " + e.getMessage());
+                sendError(session, "模型响应失败: " + e.getMessage());
             }
         } finally {
             state.aiSpeaking.set(false);

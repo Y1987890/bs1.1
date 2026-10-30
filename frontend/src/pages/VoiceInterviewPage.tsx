@@ -635,7 +635,7 @@ export default function VoiceInterviewPage() {
     }
   }, [handlePhaseConfig, handleResumeSession, presetVoiceConfig, resumeSessionId]);
 
-  // 麦克风音频持续发送给服务端做 ASR；仅 AI 播放时停发，避免回声进入识别
+  // 麦克风音频持续发送给服务端做 ASR；仅播放时停发，避免回声进入识别
   const handleAudioData = (audioData: string) => {
     if (isAiSpeakingRef.current || isSubmittingRef.current) {
       return;

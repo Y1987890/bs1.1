@@ -155,12 +155,12 @@ export default function AnalysisPanel({
           )}
         </div>
           <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-300 mb-2">
-          {isExplicitProcessing ? 'AI 正在分析中...' : '等待分析'}
+          {isExplicitProcessing ? '智能分析中...' : '等待分析'}
         </h3>
           <p className="text-slate-500 dark:text-slate-400 mb-4">
           {isExplicitProcessing
-            ? '请稍候，AI 正在对您的简历进行深度分析'
-            : '简历已上传成功，即将开始 AI 分析'}
+            ? '请稍候，系统正在对您的简历进行深度分析'
+            : '简历已上传成功，即将开始智能分析'}
         </p>
           <p className="text-sm text-slate-400 dark:text-slate-500">页面将自动刷新显示分析结果</p>
       </div>
@@ -176,7 +176,7 @@ export default function AnalysisPanel({
             <AlertCircle className="w-8 h-8 text-red-500 dark:text-red-400"/>
         </div>
           <h3 className="text-xl font-semibold text-slate-700 dark:text-slate-300 mb-2">分析失败</h3>
-          <p className="text-slate-500 dark:text-slate-400 mb-4">AI 服务暂时不可用，请稍后重试</p>
+          <p className="text-slate-500 dark:text-slate-400 mb-4">模型服务暂时不可用，请稍后重试</p>
         {(analyzeError || analysis?.summary) && (
             <div
                 className="mt-4 p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg text-left mb-4">

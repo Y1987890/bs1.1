@@ -52,7 +52,7 @@ const CANDIDATE_GROUPS: NavGroup[] = [
     id: 'interview',
     title: '求职实战',
     items: [
-      { id: 'resumes', path: '/history', label: '简历管理', icon: FileStack, description: '简历与 AI 分析' },
+      { id: 'resumes', path: '/history', label: '简历管理', icon: FileStack, description: '简历与智能分析' },
       { id: 'upload', path: '/upload', label: '上传简历', icon: Upload, description: '上传并分析简历' },
       { id: 'interview-hub', path: '/interview-hub', label: '面试中心', icon: Sparkles, description: '文字/语音面试' },
       { id: 'interviews', path: '/interviews', label: '面试记录', icon: Users, description: '查看面试历史' },
@@ -98,7 +98,7 @@ const ADMIN_GROUPS: NavGroup[] = [
       { id: 'jobs', path: ROUTES.jobs, label: '岗位审核', icon: Briefcase, description: '审核岗位' },
       { id: 'resumes', path: '/history', label: '简历库', icon: FileStack, description: '全量简历' },
       { id: 'kb', path: '/knowledgebase', label: '知识库', icon: Database, description: '知识文档' },
-      { id: 'settings', path: '/settings', label: 'AI 服务设置', icon: Settings, description: '模型服务配置' },
+      { id: 'settings', path: '/settings', label: '模型服务设置', icon: Settings, description: '模型服务配置' },
     ],
   },
 ];
@@ -291,8 +291,8 @@ export default function Layout() {
         {/* 底部信息 */}
         <div className="p-4 border-t border-slate-100 dark:border-slate-700">
           <div className="px-3 py-2 bg-gradient-to-r from-primary-50 to-indigo-50 dark:from-primary-900/30 dark:to-slate-800 rounded-xl">
-            <p className="text-xs text-primary-600 dark:text-primary-400 font-medium">职跃 · 求职训练平台</p>
-            <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">Powered by AI</p>
+            <p className="text-xs text-primary-600 dark:text-primary-400 font-medium">职跃 ZhiYue</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">校园求职训练与能力成长平台</p>
           </div>
         </div>
       </aside>

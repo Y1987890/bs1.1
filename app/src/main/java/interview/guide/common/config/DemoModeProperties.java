@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 /**
  * 本地演示模式配置
  *
- * <p>默认关闭。仅当 APP_DEMO_ENABLED=true 时启用，用于在没有真实 AI 服务时
+ * <p>默认关闭。仅当 APP_DEMO_ENABLED=true 时启用，用于在没有真实模型服务时
  * 演示核心业务闭环（出题与评估使用确定性本地逻辑，不调用任何 LLM）。
- * 正常 AI 模式不受影响。
+ * 正常模型调用模式不受影响。
  */
 @Component
 @ConfigurationProperties(prefix = "app.demo-mode")

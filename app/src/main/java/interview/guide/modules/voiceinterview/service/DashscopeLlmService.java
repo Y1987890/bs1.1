@@ -183,17 +183,17 @@ public class DashscopeLlmService {
         if (errorMessage != null) {
             if (errorMessage.contains("403") || errorMessage.contains("ACCESS_DENIED") ||
                 errorMessage.contains("Authentication")) {
-                return "AI 服务认证失败，请检查 API Key 配置";
+                return "模型服务认证失败，请检查密钥配置";
             } else if (errorMessage.contains("timeout") || errorMessage.contains("Timeout")) {
-                return "AI 服务响应超时，请稍后重试";
+                return "模型服务响应超时，请稍后重试";
             } else if (errorMessage.contains("429") || errorMessage.contains("rate limit") ||
                        errorMessage.contains("quota")) {
-                return "AI 服务调用频率超限，请稍后重试";
+                return "模型服务调用频率超限，请稍后重试";
             } else if (errorMessage.contains("connection") || errorMessage.contains("network")) {
-                return "AI 服务网络连接失败，请检查网络";
+                return "模型服务网络连接失败，请检查网络";
             }
         }
-        return "抱歉，AI 服务暂时不可用，请稍后重试";
+        return "抱歉，模型服务暂时不可用，请稍后重试";
     }
 
     private String optimizeForVoice(String content) {

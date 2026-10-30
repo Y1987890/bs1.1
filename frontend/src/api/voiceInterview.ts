@@ -285,7 +285,7 @@ export class VoiceInterviewWebSocket {
               );
               break;
             case 'audio':
-              // 检查是否是 AI 响应（包含 text 字段）
+              // 检查是否是模型响应（包含 text 字段）
               if ('text' in message) {
                 const audioMsg = message as WebSocketAudioResponseMessage;
                 this.handlers.onAudioResponse?.(audioMsg.data, audioMsg.text);

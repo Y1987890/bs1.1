@@ -355,7 +355,7 @@ public class InterviewQuestionService {
 
         if (currentMainCount <= maxMainCount) {
             if (currentMainCount < maxMainCount) {
-                log.warn("AI 生成主问题不足: 请求={}, 实际={}", maxMainCount, currentMainCount);
+                log.warn("模型生成主问题不足: 请求={}, 实际={}", maxMainCount, currentMainCount);
             }
             return questions;
         }

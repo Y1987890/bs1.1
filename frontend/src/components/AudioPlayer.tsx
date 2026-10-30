@@ -9,7 +9,7 @@ interface AudioPlayerProps {
 
 /**
  * 音频播放器组件
- * 用于播放AI语音合成生成的MP3音频
+ * 用于播放语音合成生成的MP3音频
  */
 export default function AudioPlayer({ audioData, text, onPlayEnd }: AudioPlayerProps) {
   const audioRef = useRef<HTMLAudioElement>(null);

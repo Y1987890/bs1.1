@@ -52,12 +52,12 @@ public enum ErrorCode {
     KNOWLEDGE_BASE_DELETE_FAILED(6005, "知识库删除失败"),
     KNOWLEDGE_BASE_VECTORIZATION_FAILED(6006, "知识库向量化失败"),
     
-    // ========== AI服务错误 7xxx ==========
-    AI_SERVICE_UNAVAILABLE(7001, "AI服务暂时不可用，请稍后重试"),
-    AI_SERVICE_TIMEOUT(7002, "AI服务响应超时"),
-    AI_SERVICE_ERROR(7003, "AI服务调用失败"),
-    AI_API_KEY_INVALID(7004, "AI服务密钥无效"),
-    AI_RATE_LIMIT_EXCEEDED(7005, "AI服务调用频率超限"),
+    // ========== 模型服务错误 7xxx ==========
+    AI_SERVICE_UNAVAILABLE(7001, "模型服务暂时不可用，请稍后重试"),
+    AI_SERVICE_TIMEOUT(7002, "模型服务响应超时"),
+    AI_SERVICE_ERROR(7003, "模型服务调用失败"),
+    AI_API_KEY_INVALID(7004, "模型服务密钥无效"),
+    AI_RATE_LIMIT_EXCEEDED(7005, "模型服务调用频率超限"),
 
     // ========== 限流模块错误 8xxx ==========
     RATE_LIMIT_EXCEEDED(8001, "请求过于频繁，请稍后再试"),

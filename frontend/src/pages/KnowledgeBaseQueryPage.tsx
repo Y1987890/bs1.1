@@ -363,7 +363,7 @@ export default function KnowledgeBaseQueryPage({ onBack, onUpload }: KnowledgeBa
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">问答助手</h1>
-          <p className="text-slate-500 dark:text-slate-400 text-sm">选择知识库，向 AI 提问</p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm">选择知识库，开始智能问答</p>
         </div>
         <div className="flex gap-3">
           <motion.button

@@ -157,7 +157,7 @@ public class ResumeController {
     public Result<Map<String, String>> health() {
         return Result.success(Map.of(
             "status", "UP",
-            "service", "AI Interview Platform - Resume Service"
+            "service", "Zhiyue Interview Platform - Resume Service"
         ));
     }
 

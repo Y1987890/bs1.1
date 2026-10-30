@@ -1,0 +1,23 @@
+# 本地原生运行 Profile（无 Docker / 无 pgvector 时使用）
+#
+# 适用于：Windows 上以原生进程方式运行 PostgreSQL（EDB 便携版二进制，未安装 pgvector）、
+# Redis（tporadowski Windows 版）与 MinIO（S3 兼容对象存储）的开发/答辩环境。
+#
+# 启动方式：
+#   $env:SPRING_PROFILES_ACTIVE='local'
+#   java -Xmx1g -Dfile.encoding=UTF-8 -jar app/build/libs/app-0.0.1-SNAPSHOT.jar
+#
+# 影响范围：
+#   - 关闭 pgvector 的启动 schema 初始化（知识库向量检索功能不可用，其余功能正常）
+
+spring:
+  ai:
+    vectorstore:
+      pgvector:
+        initialize-schema: false
+
+app:
+  demo-mode:
+    enabled: ${APP_DEMO_ENABLED:false}
+  auth:
+    seed-demo-users: true
